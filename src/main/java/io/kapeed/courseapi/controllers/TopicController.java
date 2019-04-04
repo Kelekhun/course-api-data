@@ -23,23 +23,23 @@ public class TopicController {
 
     }
 
-    @RequestMapping("/{id}")
+    @RequestMapping("/{id}/")
     public Topic getTopic(@PathVariable String id){
         return topicService.getTopic(id);
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST, value = "/")
     public void addTopic(@RequestBody Topic topic){
         topicService.addTopic(topic);
     }
 
-    @RequestMapping(method = RequestMethod.PUT, value = "/{id}")
+    @RequestMapping(method = RequestMethod.PUT, value = "/{id}/")
     public void updateTopic(@RequestBody Topic topic, @PathVariable String id){
         topicService.updateTopic(id, topic);
     }
 
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}/")
     public void deleteTopic(@PathVariable String id){
         topicService.deleteTopic(id);
     }
